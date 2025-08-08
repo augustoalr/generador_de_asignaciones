@@ -1,0 +1,5 @@
+Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'children')
+    at File.createHeader (docx.js?v=6defdb22:17331:40)
+    at File.addSection (docx.js?v=6defdb22:17315:41)
+    at new File (docx.js?v=6defdb22:17303:12)
+    at generateDocument (App.jsx:421:17)
