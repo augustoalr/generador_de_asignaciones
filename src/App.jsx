@@ -521,10 +521,12 @@ function App() {
             <input type="file" id="image-upload" name="image-upload" accept="image/*" />
             <input type="file" id="camera-upload" name="camera-upload" accept="image/*" capture="environment" style={{display: 'none'}} />
             
-              <button type="button" onClick={() => document.getElementById('camera-upload').click()} className="btn btn-secondary">Tomar Foto</button>
-              <button type="submit" className={`btn ${currentlyEditingId ? 'btn-update' : 'btn-add'}`}>
-                {currentlyEditingId ? 'Actualizar Obra' : 'Agregar Obra a la Lista'}
-              </button>
+              <div className="form-actions">
+                <button type="button" onClick={() => document.getElementById('camera-upload').click()} className="btn btn-secondary">Tomar Foto</button>
+                <button type="submit" className={`btn ${currentlyEditingId ? 'btn-update' : 'btn-add'}`}>
+                  {currentlyEditingId ? 'Actualizar Obra' : 'Agregar Obra a la Lista'}
+                </button>
+              </div>
             
           </form>
         </div>

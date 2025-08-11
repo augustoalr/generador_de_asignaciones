@@ -1,21 +1,37 @@
-/* Estilos Generales */
-body {
+
+/* body {
   font-family: Arial, sans-serif;
   background-color: #f4f7f6;
   color: #333;
   margin: 0;
   padding: 20px;
-}
+  overflow-x: hidden;
+} */
+
+
+
 
 header {
   text-align: center;
   margin-bottom: 20px;
   color: #2c3e50;
+  padding: 20px;
+}
+
+header h1{
+  font-size: 38px;
+  text-align: center;
+  transition: font-size 0.3s ease;
 }
 
 .container {
+  
   display: flex;
   gap: 30px;
+  padding:20px;
+  max-width: 100%;
+  
+  box-sizing: border-box; /* Añadido para evitar desbordamiento */
 }
 
 .form-container,
@@ -48,13 +64,16 @@ h2 {
   font-weight: bold;
 }
 
-#artwork-form input {
+
+#artwork-form input,
+#artwork-form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Añadido para evitar desbordamiento */
+  
 }
 
 /* Botones */
@@ -251,11 +270,20 @@ h2 {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    padding: 15px;
   }
+
+
+    header h1{
+  font-size:24px;
+  
+}
 
   .form-container,
   .list-container {
     width: 100%;
+    box-sizing: border-box;
+    
   }
 
   .list-header {
@@ -283,8 +311,13 @@ h2 {
 /* Para teléfonos móviles */
 @media (max-width: 480px) {
   body {
-    padding: 10px;
+    padding: 15px; /* Ajustado para consistencia */
   }
+
+    header h1{
+  font-size: 20px; /* Un tamaño más adecuado para pantallas pequeñas */
+  
+}
 
   .form-container,
   .list-container {
@@ -336,7 +369,7 @@ h2 {
   width: 90%;
   max-width: 600px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto;
 }
 
@@ -387,6 +420,47 @@ h2 {
   .modal-content {
     padding: 20px;
   }
+
+
+
+.list-header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+ .project-manager {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .project-manager select {
+    max-width: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+  }
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .project-actions{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+    .project-actions button {
+    margin-left: 0; /* Anulamos el margen fijo que tenían */
+    flex-grow: 1;   /* Hacemos que los botones puedan crecer para ocupar el espacio */
+  }
 }
 
 @media (max-width: 480px) {
@@ -403,5 +477,10 @@ h2 {
   .modal-actions button {
     width: 100%;
     margin-left: 0;
+  }
+
+    header h1 {
+    font-size: 1.8em; /* Un tamaño más adecuado para pantallas pequeñas */
+    line-height: 1.2;
   }
 }
